@@ -97,7 +97,6 @@ def hemisphere(browser):
     url = 'https://marshemispheres.com/'
     browser.visit(url)
     hemisphere_image_urls = []
-    #hemispheres = {}
     for i in range(4):
         hemispheres = {}
         browser.find_by_css('a.product-item img')[i].click()
@@ -106,7 +105,7 @@ def hemisphere(browser):
         hemispheres['title'] = browser.find_by_css('h2.title').text
         hemisphere_image_urls.append(hemispheres)
         browser.back()
-        return hemisphere_image_urls
+    return hemisphere_image_urls
 
 def scrape_hemisphere(html_text):
     hemispheres_soup = soup(html_text, 'html.parser')
